@@ -42,7 +42,6 @@ export function extractVowels (str) {
 export function extractConsonants (str) {
   return str.replace(/[^BCDFGHJKLMNPQRSTVWXYZ]/gi, '')
 }
-
 export function birthplaceFields (provinceSelector, birthplaceSelector) {
   const provinceSelect = document.querySelector(provinceSelector)
   const birthplaceSelect = document.querySelector(birthplaceSelector)
@@ -82,4 +81,13 @@ export function birthplaceFields (provinceSelector, birthplaceSelector) {
   }
   provinceSelect.selectedIndex = '0'
   provinceSelect.onchange()
+}
+export function getComuni () {
+  return Object.entries(COMUNI).filter(([key, value]) => value[1] !== 'EE')
+}
+export function getProvince () {
+  return Object.entries(PROVINCE).filter(([key]) => key !== 'EE')
+}
+export function getCountries () {
+  return Object.entries(COMUNI).filter(([key, value]) => value[1] === 'EE')
 }

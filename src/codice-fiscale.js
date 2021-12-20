@@ -1,6 +1,6 @@
 import { Comune } from './comune'
 import { CHECK_CODE_CHARS, CHECK_CODE_EVEN, CHECK_CODE_ODD, MONTH_CODES, OMOCODIA_TABLE, OMOCODIA_TABLE_INVERSE } from './constants'
-import { extractConsonants, extractVowels, getValidDate, birthplaceFields } from './utils'
+import { extractConsonants, extractVowels, getValidDate, birthplaceFields, getComuni, getProvince, getCountries } from './utils'
 
 class CodiceFiscale {
   get day () {
@@ -131,6 +131,15 @@ class CodiceFiscale {
       input = input.join('');
     }
     return input
+  }
+  static getComuni () {
+    return getComuni()
+  }
+  static getProvince () {
+    return getProvince()
+  }
+  static getCountries () {
+    return getCountries()
   }
   toString () {
     return this.code

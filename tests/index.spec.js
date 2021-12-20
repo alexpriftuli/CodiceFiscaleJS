@@ -120,16 +120,6 @@ describe('CodiceFiscale.check', () => {
     expect(CodiceFiscale.check('BNZVCNPNSMLERTPX')).toBe(true)
   })
 })
-
-
-
-
-
-
-
-
-
-
 describe("Il metodo toString()", ()=>{
   test("funziona correttamente anche con le omocodie", ()=>{
     let cf = new CodiceFiscale({
@@ -144,5 +134,23 @@ describe("Il metodo toString()", ()=>{
     cf.omocodie();
     expect(cf.toString()).toBe("RSSMRA87B01H501A");
 
+  })
+})
+describe('get Province', () => {
+  test('get all the Provinces', () => {
+    let provinces = CodiceFiscale.getProvince();
+    expect(provinces.length).toBe(108);
+  })
+})
+describe('get Towns', () => {
+  test('get all the Towns', () => {
+    let towns = CodiceFiscale.getComuni();
+    expect(towns.length).toBe(13322);
+  })
+})
+describe('get Countries', () => {
+  test('get all the Countries', () => {
+    let countries = CodiceFiscale.getCountries();
+    expect(countries.length).toBe(347);
   })
 })
